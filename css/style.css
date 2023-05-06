@@ -1,0 +1,91 @@
+:root {
+    --font-primary: 'Roboto', sans-serif;
+    --font-secondary: 'Permanent Marker', cursive;
+    --primary-color: #234232;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--font-primary);
+    background-color: var(--primary-color) ;
+}
+
+
+/* Universal selector(*) kullanmaktan kaçınmak adına aşagıda bazı 
+default stilleri resetleyecek kurallar yazdım. Bu kuralların yanına yorum
+satırı bıraktım. Bu kuralları body selector'üyle seçemiyoruz çünkü 
+yeterince specific değiller. Bu nedenle ya universal selector kullanarak
+tüm dökümanı resetleyeceğiz, -bu da performans kaybına neden olacak- 
+ya da aşağıda yaptığım gibi tag selector ile en tepede resetleyeceğiz.  */
+
+ul,
+ol,
+dl {
+    list-style: none; /* resetting the default property */
+    margin: 0; /* resetting the default property */
+    padding: 0; /* resetting the default property */
+}
+
+ 
+li {
+    margin-left: 0;
+}
+
+/*
+    => resetting the default property
+    margin-left:0; property is used to remove the default left margin
+    that is applied to list items by some browsers. 
+*/
+
+a{
+    text-decoration: none; /* resetleme işlemi */
+    color: inherit; /* resetleme işlemi */
+    /* color: inherit property is used to inherit the color of its parent
+    element. By default, the color of a link is set to blue, but by using
+    inherit property, we can make the link inherit the color of its parent
+    element. Or we can change it to something else entirely. */
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 33px 9%;
+    background: transparent;
+}
+
+header .logo {
+    color:#fff;
+    font-weight: 900;
+    font-size: 1.5em;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+}
+
+nav ul li {
+    padding: 0.5rem;
+}
+
+nav ul li a {
+    color: #fff;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: all .55s ease; /* look up */
+}
+
+nav ul li a:hover {
+    border-bottom: 2px solid #fff;
+}
+
+#menu-icon {
+    color: white;
+    font-size: 2.2rem;
+    z-index: 10001;
+    cursor: pointer;
+    display: none;
+}
